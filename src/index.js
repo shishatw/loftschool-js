@@ -48,7 +48,7 @@ function sumWithDefaults(a, b = 100) {
 //   return qu
 //  }
 
-  const returnFnResult = (fn) =>fn()
+  const returnFnResult = (fn) => fn()
 
 /*
  Задание 4:
@@ -63,14 +63,16 @@ function sumWithDefaults(a, b = 100) {
    console.log(f()); // выведет 12
    console.log(f()); // выведет 13
  */
-function returnCounter(number = 0) {
-  let f1 = number;
-  const f = function () {
-    f1 = f1 + 1
-    return f1;
-  }
-  return f
-}
+// function returnCounter(number = 0) {
+//   let f1 = number;
+//   const f = function () {
+//     f1 = f1 + 1
+//     return f1;
+//   }
+//   return f
+// }
+
+const returnCounter = (number = 0) => () => ++number;
 
 // function test(a) {
 //   const b = 1;
@@ -98,8 +100,14 @@ function returnCounter(number = 0) {
  Пример:
    returnArgumentsArray(1, 2, 3) вернет [1, 2, 3]
  */
-function returnArgumentsArray() {
-}
+
+   function returnArgumentsArray() {
+    const result = []
+    for (var i = 0; i<arguments.length; i++) {
+    result[i] = arguments[i]
+    }
+   return result;
+  }
 
 /*
  Задание 6 *:
